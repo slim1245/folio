@@ -1,0 +1,19 @@
+{
+  "name": "folio-studio",
+  "version": "1.0.0",
+  "description": "Folio Studio: мастерская портфолио для дизайнера и 3D-художника",
+  "author": "Folio Studio",
+  "main": "main.js",
+  "scripts": { "start": "electron .", "dist": "electron-builder --publish never" },
+  "devDependencies": { "electron": "^31.0.0", "electron-builder": "^24.13.3" },
+  "build": {
+    "appId": "local.folio.studio",
+    "productName": "Folio Studio",
+    "files": ["index.html", "main.js", "preload.js", "package.json"],
+    "directories": { "buildResources": "build", "output": "dist" },
+    "win": { "target": "nsis" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true },
+    "mac": { "target": "dmg", "category": "public.app-category.graphics-design" },
+    "linux": { "target": "AppImage", "category": "Graphics" }
+  }
+}
